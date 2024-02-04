@@ -16,7 +16,15 @@ while True:
     if "send" in data:
         pass
     elif "get" in data:
-        pass
+        client.send(data.encode())  # отправляем сообщение серверу
+        fx = open("gettedDataFromServer", "wb")
+        while True:
+            data = client.recv(1024)  # получаем данные от сервера
+            #            print(bytes.decode(data))
+            fx.write(data)
+            if not data: break
+        fx.close()
+        client.close()
     elif "start" in data:
         pass
     else:

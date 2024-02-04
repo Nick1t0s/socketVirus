@@ -42,6 +42,8 @@ while True:
         tr=input("Select target:")
         print()
     command=input("Write your command: ")
+    if "get" in command:
+        
     x[tr].send(command.encode())
     res=x[tr].recv(1024).decode()
     print(res)
