@@ -7,7 +7,7 @@ import socket,subprocess
 client = socket.socket()  # создаем сокет клиента
 hostname = socket.gethostname()  # получаем хост локальной машины
 port = 12345  # устанавливаем порт сервера
-client.connect(('192.168.1.13', port))  # подключаемся к серверу
+client.connect(('192.168.88.223', port))  # подключаемся к серверу
 #while True:
 client.send('Tester1'.encode())
 #    data=client.recv(1024)
